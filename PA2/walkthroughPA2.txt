@@ -1027,5 +1027,5 @@ A5: Add in the other features, one-at-a time. Follow this process:
     5. Rerun the checkYourOutput.sh script to make sure you didn't break it.
 
 
-Now that you've finished reading this file, next read the PA2assignment.txt
-file...
+Now that you've finished reading this file, next read PA2shortAssignment.txt,
+then PA2assignment.txt...

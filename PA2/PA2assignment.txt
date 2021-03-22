@@ -167,7 +167,7 @@ Line 20: This line is empty.
 Line 21: alias l='mv 1 9&>~/X; disp'
 
 Line 22: alias disp='...'
-         The disp command's primary job is to displays what the player reads
+         The disp command's primary job is to display what the player reads
          when they enter a room. But it has other jobs as well and actually
          does four things:
          __1__ Display the description. This may display in long form (on the
@@ -185,7 +185,8 @@ Line 22: alias disp='...'
                remember that the room has now been visited.
 
          __3__ Display the messages from the "There" file. This involves simply
-               "dispmessages", which is the alias we'll be defining on line 23.
+               executing "dispmessages", which is the alias we'll be defining
+               on line 23.
 
          __4__ An unrelated job that "disp" must do is to remove symbolic links
                from the path. See slide 181 of Lecture 2 for more on how to do
@@ -194,9 +195,12 @@ Line 22: alias disp='...'
                on line 9). But the need to conditionally run nogo meant that
                the above aliases had: "__1__ || cd [dir]&>~/X && DISP || nogo".
 
-               One easy solution would be: "... && (disp; echo>~/X) || nogo".
-               But the problem with this approach is that removing the symbolic
-               links requires running "cd", so it cannot go inside parentheses.
+               We almost could solve this simply: "...&&(disp;echo>~/X)||nogo".
+               But the problem with the prior line is that the "disp" command
+               would be run inside of parentheses. That is because the "disp"
+               command needs to do a "cd" in order to remove symbolic links
+               from the pwd path. In order for the cd to work, "disp" cannot
+               go inside parentheses, and the solution is less simple.
                
          The full structure of the solution is:
          alias disp='__4__&&(__1__;(__2__; __3__))'         
@@ -266,14 +270,14 @@ Line 24: This line is empty.
 
 Line 25: alias i='echo You currently have:;(cd ~/i/i;__1__)'
          As you can see, a cd is performed inside of a parenthesis. In this
-         case, its is OK, because we don't really want to change the directory.
+         case, it is OK, because we don't really want to change the directory.
          Instead, the reason for the cd is so that the ls command will just
          list file names, without paths.
          For the __1__ part, you need to list what is in the directory, then
          add an "A" in front of each entry. This involves using xargs with the
          -n1 flag.
          Another concern is: what if your inventory is empty? Then we should
-         not see Any output from __1__. This can be achieved using fgrep.
+         not see any output from __1__. This can be achieved using fgrep.
 
 Line 26: alias getall='mv __1__ ~/_/i/_&>~/X||echo Nothing to take.; (cd ~/_/i/_;__2__)&&mv ~/_/i/_/* ~/_/i/i&>~/X'
          The __1__ is a SINGLE wildcard pattern that matches to all objects
@@ -343,14 +347,14 @@ Line 29: alias put='__1__'
          (if you put it in the chute), or else to "~/PA2/rooms" (if you put
          it in the urinal).
 
-Line 28: alias flush='__1__'
+Line 30: alias flush='__1__'
          If you are not at the urinal, say "I see nothing to flush." Otherwise,
          say "Whoooosh!!".
          Also, if anything had been put in the urinal (ie, if any treasures are
          in ~/PA2/rooms), then move them to the treasureRoom and run "score".
 
-Line 29: This line is empty.
+Line 31: This line is empty.
 
-Line 30: l
+Line 32: l
          This isn't an alias. It is actually executing the 'l' command, because
          the game does start by displaying the contents of the first room.

@@ -1,0 +1,35 @@
+>x lamp
+>x shovel
+>e
+>n
+>e
+>i
+>getall
+>i
+>d
+>cd ../../../../../buttonRoom
+>l
+>nw
+>u
+>se
+>d
+>nw
+>nw
+>s
+>s
+>s
+>s
+>s
+>getall
+>i
+>e
+>e
+>n
+>d
+>s
+>flush
+>put
+>i
+>score
+>flush
+>quit

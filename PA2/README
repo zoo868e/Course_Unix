@@ -24,14 +24,18 @@ Let's now see what files have been provided. If you are reading this current
 README file, then you must have untarred Programming Assignment #2's tar file.
 Looking in that directory, you will see:
     % ls ~/PA2
-    PA2assignment.txt   expectedOutput.txt  rooms.tar     walkthroughPA2.txt
-    README              filenamesdir        savedgame
-    checkYourOutput.sh  gradingPolicy.txt   testInput.sh
+    PA2assignment.txt       expectedOutput.txt  savedgame
+    PA2shortAssignment.txt  filenamesdir        testInput.sh
+    README                  gradingPolicy.txt   walkthroughPA2.txt
+    checkYourOutput.sh      rooms.tar
     %
 
-Four of these above files should be read in the following order: README,
-walkthroughPA2.txt, PA2assignment.txt, and gradingPolicy.txt. These files
-describe the requirements of the assignment.
+Five of these above files should be read in the following order: README,
+walkthroughPA2.txt, PA2shortAssignment.txt, PA2assignment.txt, and
+gradingPolicy.txt. These files describe the requirements of the assignment.
+(The PA2shortAssignment.txt file is a simplified implementation of the full
+version described in PA2assignment.txt. Implementing this version first will
+ensure that you will get at least a 50%)
 
 Three more of these files are for testing: testInput.sh, expectedOutput.txt,
 and checkYourOutput.sh. These files are described the walkthrough.txt file.
