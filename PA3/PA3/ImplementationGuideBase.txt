@@ -1,0 +1,45 @@
+Note: at the moment this file is unfinished. But I wanted to post some more of
+      the assignment for you to read. Look back tomorrow or the next day for
+      the full version.
+
+This file describes what needs to go into each of your scripts, in order to get
+the basic test working. Therefore this file is divided into 5 sections.
+
+Furthermore, the individual parts of these scripts are intended to be reused
+in the full implementation. Therefore each section below is sub-divided into
+regions (These parts will then be refered to by their region#, in the guide to
+the full implementation.)
+
+---------------------------------
+| Basic Implementation of "get" |
+---------------------------------
+Line 1: #!/usr/bin/tcsh
+
+#Section #1:
+Line 2: The first argument recieved by this script is supposed to be the name
+        of a file in the current room. This line moves that file to the ~/_/i/_
+        directory.
+
+#Section #2:
+Line 3: cd ~/_/i/_
+
+#Section #3:
+Line 4: This line moves everything from ~/_/i/_ into ~/_/i/i. It should not
+        produce an error message if nothing is there. It also should print
+	"Taken.", if successful.
+        Note: To make the basic test run, we could always print "Taken." But
+	      we are designing this line in such a way that it can be reused
+	      in the full implementation. So the handling of error messages
+	      and the "Taken." statement are necessary.
+
+And that is the end of this very simple get script. Note: the full version is
+much more complex, because it needs to handle "get all" and "get weight" if it
+unpresses the button.
+
+
+---------------------------------
+| Basic Implementation of "drop" |
+---------------------------------
+Line 1: #!/usr/bin/tcsh
+
+... File is unfinished...
