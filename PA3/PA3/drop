@@ -1,0 +1,14 @@
+#!/usr/bin/tcsh
+set j = `pwd`
+set i = `basename $j`
+if ( X$1 == X ) then
+echo "You must supply an object."
+else if ( -e ~/_/i/i/$1 ) then
+mv ~/_/i/i/$1 ./
+echo "Done."
+	if (X$1 == Xweight && $i == buttonRoom) then
+	echo "A passageway opens."
+	endif
+else 
+echo "You don't have that."
+endif

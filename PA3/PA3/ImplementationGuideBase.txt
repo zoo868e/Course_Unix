@@ -1,6 +1,5 @@
-Note: at the moment this file is unfinished. But I wanted to post some more of
-      the assignment for you to read. Look back tomorrow or the next day for
-      the full version.
+Note: I wanted to post some more of the assignment for you to read. Look back
+      later tonight for the full version of this file.
 
 This file describes what needs to go into each of your scripts, in order to get
 the basic test working. Therefore this file is divided into 5 sections.
@@ -37,9 +36,86 @@ much more complex, because it needs to handle "get all" and "get weight" if it
 unpresses the button.
 
 
----------------------------------
+----------------------------------
 | Basic Implementation of "drop" |
----------------------------------
+----------------------------------
 Line 1: #!/usr/bin/tcsh
 
-... File is unfinished...
+As for the remaining lines, they form a giant "if (...) then ... else if (...)
+then ... else if (...) then ... else ..." structure. The bodies of the four
+if-cases that are thus created correspond to the following 4 outputs:
+ 1. "You must supply an object."
+ 2. "Done."
+ 3. "I don't know what that is." (In this basic implementation, skip this one.)
+ 4. "You don't have that."
+
+In the case of "Done.", you need to do more than display the message. You also
+need to: 1) Move the object from ~/_/i/i to the room, and 2) Handle with the
+situation of dropping the weight on the button. If this situation is detected,
+then you need:
+ - To display "A passageway opens."
+ - To modify the passages out of the room. So you will need to make links (to
+   the current directory) for the directions of d, e, ne, se, sw, and w. Also,
+   the passageway to the northwest needs to be opened and the ladder going up
+   needs to be blocked. You do this by renaming ".nw" to "nw" and "u" to ".u".
+
+
+----------------------------------
+| Basic Implementation of "break" |
+----------------------------------
+Line 1: #!/usr/bin/tcsh
+
+Ignoring for the moment the final line of the break file (which is "exit 1"),
+all of the other remaining lines form a giant "if (...) then ... else if (...)
+then ... else if (...) then ... else if (...) then ... else if (...) then ...
+else if (...) then ... else if (...) then ... else ..." structure. The bodies
+of the eight if-cases thus created correspond to the following 8 outputs:
+ 1. "You have nothing you can use to break things."
+ 2. "You must supply an object."
+ 3. "I don't know what that is."
+ 4. "I don't see that here."
+ 5. "Your axe breaks it into a million pieces."
+ 6. "As you break the ethernet cable, everything starts to blur.  You colla..."
+ 7. "Your axe shatters into a million pieces."
+ 8. "You take the object in your hands and swing the axe.  Unfortunately, y..."
+
+Note: These 8 cases need to be in the above order, to match the game. If, for
+      example, you type "break dance" without holding the axe, then, logically,
+      either message 1 ("You have nothing...") or message 3 ("I don't know...)
+      would be correct. The game, however, displays message #1 -- hence, these
+      cases have to be in the order indicated above.
+
+Among the above 8 cases, only four are in the basic test (cases 1, 4, 5 and 6).
+Among these 4 basic cases, they do what you would expect:
+- If you don't have an axe, say:"You have nothing you can use to break things."
+- If the first argument is not the name of a file in either your inventory or
+  or the room, then say: "I don't see that here."
+- If the object is in the room, then remove it and say: "Your axe breaks it
+  into a million pieces." (Now, to be technically correct, it is not enough for
+  the object to be in the room. It also needs to be gettable. But this is not
+  a concern for the basic test, as we never try to break ungettable objects).
+- If you break the cable, say "As you break the ethernet cable..." AND also
+  exit with a 0. The 0 indicates "success". For break, success means breaking
+  the cable (which is the only thing you are meant to break). Returning success
+  in only this one condition makes sense with the way break is used. Recall:
+    % grep break= PA3.sh
+    alias break='source ~/PA3/break2'
+    % cat break2
+    ~/PA3/break $* && quit
+    %
+
+At this point, the break command is finished. Except for one final line:
+Final line: exit 1
+            By exiting with a failure value, we prevent the break2 script from
+	    running the quit alias.
+
+
+--------------------------------------
+| Basic Implementation of "cantmove" |
+--------------------------------------
+To be added later tonight...
+
+----------------------------------
+| Basic Implementation of "turn" |
+----------------------------------
+To be added later tonight...

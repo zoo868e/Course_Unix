@@ -1,0 +1,4 @@
+#!/usr/bin/tcsh
+mv $1 ~/_/i/_ >& ~/X
+cd ~/_/i/_
+ls | xargs -i -n1 echo {} "Taken."&&mv ./* ~/_/i/i/ >& ~/X

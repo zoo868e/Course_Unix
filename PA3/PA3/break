@@ -1,0 +1,15 @@
+#!/usr/bin/tcsh
+if (! -e ~/_/i/i/axe ) then
+echo "You have nothing you can use to break things."
+else if ( X$1 == X ) then
+echo "You must supply an object."
+else if (! -e ./$1 && ! -e ~/_/i/i/$1 ) then
+echo "I don't see that here."
+else if ( -e ./$1 ) then
+rm -f $1 >& ~/X
+echo "Your axe breaks it into a million pieces."
+else if ( -e ~/_/i/i/$1 ) then
+echo "As you break the ethernet cable, everything starts to blur.  You collapse for a moment, then straighten yourself up."
+exit 0
+endif
+exit 1
