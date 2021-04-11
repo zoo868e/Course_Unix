@@ -77,10 +77,17 @@ echo ">i";i
 echo ">e";e
 echo ">e";e
 echo ">s";s
+echo ">s";s
+echo ">d";d
+echo ">u";u
+echo ">put";put
+echo ">flush";flush
 echo ">n";n
-echo ">n";n
+echo ">u";u
+echo ">drop lamp";drop lamp
 echo ">w";w
 cp ~/PA3/comb.right ~/PA3/comb.txt
 echo ">w";w
 echo ">i";i
+echo ">break lamp";break lamp
 echo ">break cable";break cable

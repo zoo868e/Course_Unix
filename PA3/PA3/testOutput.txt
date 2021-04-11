@@ -1,0 +1,194 @@
+Receiving room
+You are in a round, stone room with a door to the east.  There
+is a sign on the wall that reads: ‘receiving room’.
+There is a lamp nearby.
+There is a shiny brass key here.
+There is a shovel here.
+There is a slip of paper here.
+There is an axe here.
+There is an emerald bracelet here.
+>get lamp
+Taken.
+>e
+Northbound Hallway
+You are at the south end of a hallway that leads to the north.  There
+are rooms to the east and west.
+>n
+End of N/S Hallway
+You are at the end of a north/south hallway.  You can go back to the south,
+or off to a room to the east.
+>e
+Weight room
+You are in an old weight room.  All of the equipment is either destroyed or
+completely broken.  There is a door out to the west, and there is a ladder
+leading down a hole in the floor.
+There is a 10 pound weight here.
+There is a life preserver here.
+>get weight
+Taken.
+>drop weight
+Done.
+>d
+Maze button room
+You are in a maze of twisty little passages, all alike.
+There is a button on the ground here.
+>d
+You cannot go that way.
+>nw
+You cannot go that way.
+>u
+Weight room
+There is a 10 pound weight here.
+There is a life preserver here.
+>get weight
+Taken.
+>d
+Maze button room
+>drop weight
+Done.
+A passageway opens.
+>u
+You cannot go that way.
+>nw
+Maze
+You are in a maze of little twisty passages, all alike.
+>u
+Maze 
+You are in a maze of thirsty little passages, all alike.
+There is a floppy disk here.
+There is a wax statuette of Richard Stallman here.
+>get rms
+Taken.
+>get floppy
+Taken.
+>se
+Maze  
+You are in a maze of twenty little passages, all alike.
+>nw
+Maze 
+>d
+You cannot go that way.
+>nw
+Maze 
+>ne
+Maze 
+>w
+Maze 
+>s
+Maze
+>e
+Maze
+>drop floppy
+Done.
+>w
+Maze
+There is a floppy disk here.
+>e
+Maze
+There is a floppy disk here.
+>drop lamp
+Done.
+>w
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>w
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>get bracelet
+>drop
+You must supply an object.
+>drop axe
+You don't have that.
+>break
+You have nothing you can use to break things.
+>get axe
+>break paper
+You have nothing you can use to break things.
+>break shovel
+You have nothing you can use to break things.
+>break key
+You have nothing you can use to break things.
+>break dial
+You have nothing you can use to break things.
+>e
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>e
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>w
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>w
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>w
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>e
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>e
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>e
+Maze
+There is a floppy disk here.
+There is a lamp nearby.
+>get lamp
+Taken.
+>w
+Maze
+There is a floppy disk here.
+>n
+Maze
+There is a floppy disk here.
+>e
+Maze
+There is a floppy disk here.
+>get preserver
+>d
+Maze
+There is a floppy disk here.
+>nw
+Maze
+There is a floppy disk here.
+>u
+Maze 
+>se
+Maze  
+>d
+Maze   
+You are in a daze of twisty little passages, all alike.
+>nw
+Maze    
+You are in a maze of twisty little cabbages, all alike.
+>nw
+Reception area
+You are in a reception area for a health and fitness center.  The place
+appears to have been recently ransacked, and nothing is left.  There is
+a door out to the south, and a crawlspace to the southeast.
+>s
+Health Club front
+You are outside a large building to the north which used to be a health
+and fitness center.  A road leads to the south.
+>s
+Lakefront North
+You are at the north side of a lake.  On the other side you can see
+a road which leads to a cave.  The water appears very deep.
+>s
+You dive in the water, and at first notice it is quite cold.  You then
+start to get used to it as you realize that you never really learned how
+to swim.
+
+You are dead.
+You have scored 0 points.

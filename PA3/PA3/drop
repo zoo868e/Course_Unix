@@ -8,6 +8,8 @@ mv ~/_/i/i/$1 ./
 echo "Done."
 	if (X$1 == Xweight && $i == buttonRoom) then
 	echo "A passageway opens."
+	mv .nw nw
+	mv u .u
 	endif
 else 
 echo "You don't have that."

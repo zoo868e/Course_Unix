@@ -225,31 +225,47 @@ the other goes west.
 South end of cave passage
 You are at the south end of a north/south passageway.  There is a hole
 in the floor here, into which you could probably fit.
+>s
+You cannot go that way.
+>d
+Bathroom
+You are in a bathroom built for workers in the cave.  There is a
+urinal hanging on the wall, and some exposed pipes on the opposite
+wall where a sink used to be.  To the north is a bedroom.
+>u
+You cannot go that way.
+>put
+You hear it plop down in some water below.
+>flush
+Whoooosh!!
+You have scored 20 points.
 >n
-N/S/W Junction
->n
+Bedroom
+You are in what appears to be a worker's bedroom.  There is a queen-
+sized bed in the middle of the room, and a painting hanging on the
+wall.  A door leads to another room to the south, and stairways
+lead up and down.
+>u
 North end of cave passage
 You are at the north end of a north/south passageway.  There are stairs
 leading down from here.  There is also a door leading west.
+>drop lamp
+Done.
 >w
 You must type a 3 digit combination code to enter this room.
 Enter it here: Sorry, that combination is incorrect.
 >w
 You must type a 3 digit combination code to enter this room.
-Enter it here: Gamma computing center
-You are in the Gamma Computing Center.  An IBM 3090/600s is whirring
-away in here.  There is an ethernet cable coming out of one of the units,
-and going through the ceiling.  There is no console here on which you
-could type.
+Enter it here: It is pitch dark.  You are likely to be eaten by a grue.
 >i
 You currently have:
 A axe
-A gold
-A lamp
 A rms
+>break lamp
+I don't see that here.
 >break cable
 As you break the ethernet cable, everything starts to blur.  You collapse
 for a moment, then straighten yourself up.
 
 Connection closed.
-You have scored 10 points.
+You have scored 20 points.
