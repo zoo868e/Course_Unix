@@ -1,0 +1,30 @@
+#!/usr/bin/tcsh
+
+if ( ! -e ~/_/i/i/axe ) then
+	echo You have nothing you can use to break things.
+else if ( $# == 0 ) then
+	echo You must supply an object.
+else if ((( $1 =~ [19defnstuvw]*) && ( $1 !~ [dfstuw][ilhroe][aolwi]*[abcdefghijklmnopqrstuvwxyz]* )) || ( ! -e ~/_/filenamesdir/$1 )) then
+	echo I don\'t know what that is.
+else if ( ( ! -e $1 ) && ( ! -e ~/_/i/i/$1 ) ) then
+    echo I don\'t see that here.
+else if ( ( -e $1 ) && ( X$1 =~ X*[aworkv][maxslept]*[mykdrslept] ) ) then
+	echo Your axe breaks it into a million pieces.
+	rm $1
+    if ( X$1 == Xlamp ) then
+        echo "It is pitch dark.  You are likely to be eaten by a grue." | tee ~/_/grue
+    endif
+else if ( X$1 == Xcable ) then
+    echo "As you break the ethernet cable, everything starts to blur.  You collapse@for a moment, then straighten yourself up.@@Connection closed."|tr @ \\n
+    exit 0
+
+# The __6__ test is simple: see if $1 is in the room. If so, it is an immovable
+# object, because getable objects were already handled, above.
+else if ( -e $1 ) then
+    rm ~/_/i/i/axe
+    echo Your axe shatters into a million pieces.
+else
+    echo "You take the object in your hands and swing the axe.  Unfortunately, you miss@the object and slice off your hand.  You bleed to death.@@You are dead."|tr @ \\n
+    exit 0
+endif
+exit 1
