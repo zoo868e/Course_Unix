@@ -1,0 +1,13 @@
+#!/bin/sed -f
+#section 1, 6(half) good
+1 imkdir\ \-p\ pokey\/usr\/toukmond\ pokey\/rooms\n\ntouch\ cd\ ftp\ pwd\ rlogin\ ssh\ uncompress\ cat\n\ncp\ ~\/_\/i\/i\/\*\ pokey\/usr\/toukmond\/\ >&\ ~\/X\n
+#
+#section 2 good
+/.*filenamesdir/,+2D;
+#
+#section 3, 4, 5, 6(half), 7 good
+s/^\=\=>\ \(.*.*\)description\ <\=\=/\1/;s/\n/@/;h;z;n;s/\ /-/g;s/\//-/g;G;s/\n/@/;s/\(.*\)@\(.*\)/mkdir\ pokey\/rooms\/\1\;\n\ncp\ \2\*\[arokvw\]\[maxslept\]\*\[a-z\]\ pokey\/rooms\/\1\n\ntouch\ -r\ \21\ pokey\/rooms\/\1\/1\n/;$!{N;s/\n//;}
+#
+###section 8 good
+$achmod\ -R\ 755 pokey\/*
+#
