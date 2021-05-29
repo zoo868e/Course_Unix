@@ -1,12 +1,14 @@
 #!/bin/sed -f
 #section 1, 6(half) good
-1 imkdir\ \-p\ pokey\/usr\/toukmond\ pokey\/rooms\n\ntouch\ cd\ ftp\ pwd\ rlogin\ ssh\ uncompress\ cat\n\ncp\ ~\/_\/i\/i\/\*\ pokey\/usr\/toukmond\/\ >&\ ~\/X\n
+1 imkdir\ \-p\ pokey\/usr\/toukmond\ pokey\/rooms\n\ncd\ pokey\/usr\/toukmond\ntouch\ ls\ echo\ cd\ ftp\ pwd\ rlogin\ ssh\ uncompress\ cat\n\ncd\ ~\/_\ncp\ ~\/_\/i\/i\/\*\ pokey\/usr\/toukmond\/\ 2>\ ~\/X\n
 #
 #section 2 good
 /.*filenamesdir/,+2D;
 #
 #section 3, 4, 5, 6(half), 7 good
-s/^\=\=>\ \(.*.*\)description\ <\=\=/\1/;s/\n/@/;h;z;n;s/\ /-/g;s/\//-/g;G;s/\n/@/;s/\(.*\)@\(.*\)/mkdir\ pokey\/rooms\/\1\;\n\ncp\ \2\*\[arokvw\]\[maxslept\]\*\[a-z\]\ pokey\/rooms\/\1\n\ntouch\ -r\ \21\ pokey\/rooms\/\1\/1\n/;$!{N;s/\n//;}
+#s/^\=\=>\ \(.*.*\)description\ <\=\=/\1/;s/\n/@/;h;z;n;s/\ /-/g;s/\//-/g;G;s/\n/@/;s/\(.*\)@\(.*\)/mkdir\ pokey\/rooms\/\1\;\n\ncp\ \2\*\[arokvw\]\[maxslept\]\*\[a-z\]\ pokey\/rooms\/\1\n\ntouch\ -r\ \21\ pokey\/rooms\/\1\/1\n/;$!{N;s/\n//;}
+#s/^\=\=>\ \(.*.*\)description\ <\=\=/\1/;s/\n/@/;h;z;n;s/\ /-/g;s/\//-/g;G;s/\n/@/;s/\(.*\)@\(.*\)/mkdir\ -p\ pokey\/rooms\/\1\n\nfind\ \2\ -type f\ -name\ \"\*\[arokvw\]\[maxslept\]\*\[a-z\]\"\ -exec\ cp\ \{\}\ pokey\/rooms\/\1\/\ \\;\n\ntouch\ -r\ \21\ pokey\/rooms\/\1\/1\n/;$!{N;s/\n//;}
+s/^\=\=>\ \(.*.*\)description\ <\=\=/\1/;s/\n/@/;h;z;n;s/\ /-/g;s/\//-/g;G;s/\n/@/;s/\(.*\)@\(.*\)/mkdir\ -p\ pokey\/rooms\/\L\1\E\n\nfind\ \2\ -maxdepth\ 1\ -type f\ -name\ \"\*\[arokvw\]\[maxsliept\]\*\[a-z\]\"\ -exec\ cp\ \{\}\ pokey\/rooms\/\L\1\E\/\ \\;\n\ntouch\ -r\ \21\ pokey\/rooms\/\L\1\E\/\*\n/;$!{N;s/\n//;}
 #
 ###section 8 good
 $achmod\ -R\ 755 pokey\/*
