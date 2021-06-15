@@ -1,9 +1,18 @@
 BEGIN{
 	PWD = "~/_/pokey/usr/toukmond"
-	print(PWD)
 while(1){
+	gsub("/\.","",PWD)
+#	print("after remove /. from PWD : " PWD)
+	while(PWD~"/[^/\.]+\."){
+		sub("/[^/\.]+\.","",PWD)
+#		print("sub dot : " PWD)
+		}
+#	print("after remove [^/]+. from PWD : " PWD)
+	gsub("/+","/",PWD)
+	sub("\/*$","",PWD)
+#	print("updwte PWD: " PWD)
 	printf "$ ";
-	getline < "/dev/tty";
+	getline < "-";
 	gsub("\<-", "\\-");
 	gsub("\[", "\r");
 	gsub("\?", "\v");
@@ -36,10 +45,18 @@ while(1){
 		system("echo " PWD " | sed 's/.*pokey//;s_/*$_/_'")
 		}
 	else if($1 == "echo"){
-		for(i = 2;i <= NF;i++)$(i - 1) = $i
-		$NF = ""
+		sub("echo","")
+		sub(" ","")
 		print($0)
 		}
+	else if(($1 != "ls") && ($1 != "cd")){
+		gsub("\.","",$1)
+		gsub("\r","[",$1)
+		gsub("\v","?",$1)
+		gsub("\b","*",$1)
+		print($1 ": not found.")
+		}
+
 	else{
 		if(NF == 1){
 			if($1 == "cd"){
@@ -50,9 +67,11 @@ while(1){
 			}
 		if($2~"^/.*"){
 			$2 = "~/_/pokey" $2
-			print($2)
 			}
 		else if($2~".*/.*"){
+			$2 = PWD "/" $2
+			}
+		else{
 			$2 = PWD "/" $2
 			}
 		if(system("test -d " $2)){
@@ -60,11 +79,13 @@ while(1){
 			}
 		else if($1 == "cd"){
 			PWD = $2
+#			print("cd PWD : " PWD)
 			}
 		else if($1 == "ls"){
 			z = 0
 			cmd = "ls -rtl "PWD
 			while((cmd | getline temp) > 0){g[l[PWD]++] = temp}
+			$0 = g[l[PWD] - 1]
 			for(b = 0;b < l[PWD];b++){
 				gsub("  *"," ",g[b])
 				$0 = g[b]
@@ -76,11 +97,11 @@ while(1){
 				gsub("\+","",newline)
 				gsub("197[12]","1970",newline)
 				gsub("  *"," ",newline)
-				if(newline~"toukmond" || newline!~"^d" && newline!~"des"){
-					sub(" . ","@",newline)
+				if(newline~"toukmond" || (newline!~"^d" && newline!~"des")){
+					sub(" [0-9]+ ","@",newline)
 					}
 				if(newline!~"@"){
-					sub(" . ","~",newline)
+					sub(" [0-9]+ ","~",newline)
 					}
 				sub("~[^ ].[0-9]*","~2048",newline)
 				if(b == 1){
@@ -88,7 +109,13 @@ while(1){
 					sub(".","d",dotline)
 					sub("[^ ]*$",".",dotline)
 					sub("[~@][0-9]*","~2048",dotline)
-					newline = dotline "\n" dotline ".\n" newline
+#					print(dotline)
+					$0 = dotline
+					if(PWD~"toukmond"){
+						sub("~","@")
+						}
+					newline = $0 "\n" dotline ".\n" newline
+#					print(newline)
 					if(newline~"10423"){
 						sub("~","@",newline)
 						}
@@ -98,14 +125,14 @@ while(1){
 				gsub("@"," 1 toukmond restricted~",newline)
 				$0 = newline
 				for(f = 4;f <= NF;f=f+8){
-					word = $f
-					gsub("!","",word)
-					for(len = 0;len <= 19;len++){
+					word = $f $(f-1) $(f-2) $(f-3)
+#					gsub("!","",word)
+					for(len = 0;len <= 39;len++){
 						if(len == length(word)){
-							for(z = len;z<19;z++){
+							for(z = len;z<39;z++){
 								sub("~","!~",$f)
 								}
-								sub("~","!",$f)
+								sub("~","",$f)
 								break
 							}
 						}
