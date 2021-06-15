@@ -1,6 +1,6 @@
 #!/bin/sed -f
 #section 1, 6(half) good
-1 imkdir\ \-p\ pokey\/usr\/toukmond\ pokey\/rooms\n\ncd\ pokey\/usr\/toukmond\ntouch\ ls\ echo\ cd\ ftp\ pwd\ rlogin\ ssh\ uncompress\ cat\n\ncd\ ~\/_\ncp\ ~\/_\/i\/i\/\*\ pokey\/usr\/toukmond\/\ 2>\ ~\/X\n
+1 imkdir\ \-p\ pokey\/usr\/toukmond\ pokey\/rooms\n\ncd\ pokey\/usr\/toukmond\nseq\ 2306\ >ls;\ seq\ 2306\ >echo;\ seq\ 2306\ >cd;\ seq\ 2306\ >ftp;\ seq\ 2306\ >pwd;\ seq\ 2306\ >rlogin;\ seq\ 2306\ >ssh;\ seq\ 2306\ >uncompress;\ seq\ 2306\ >cat;\n\ncd\ ~\/_\ncp\ ~\/_\/i\/i\/\*\ pokey\/usr\/toukmond\/\ 2>\ ~\/X\n
 #
 #section 2 good
 /.*filenamesdir/,+2D;
