@@ -109,17 +109,47 @@ while(1){
 					sub(".","d",dotline)
 					sub("[^ ]*$",".",dotline)
 					sub("[~@][0-9]*","~2048",dotline)
+					dotdotline = newline "."
+					sub(".","d",dotdotline)
+					sub("[^ ]*$",".",dotdotline)
+					sub("[~@][0-9]*","~2048",dotdotline)
 #					print(dotline)
-					$0 = dotline
 					if(PWD~"toukmond"){
-						sub("~","@")
+						sub("~","@",dotline)
 						}
-					newline = $0 "\n" dotline ".\n" newline
+					$0 = newline
+#					print($0)
+					if($0~"^d"){
+						sub("[@~]"," ")
+#						print($2)
+						if($0!~"toukmond"){
+							sub("[0-9]+","~0",$2)
+							}
+						else{
+							sub("[0-9]+","@0",$2)
+							}
+#						print($0)
+						newline = $0
+						}
+					newline = dotline "\n" dotdotline ".\n" newline
 #					print(newline)
-					if(newline~"10423"){
-						sub("~","@",newline)
-						}
 					sub("2048","512",newline)
+					}
+				else{
+					$0 = newline
+#					print($0)
+					if($0~"^d"){
+						sub("[@~]"," ")
+#						print($2)
+						if($0!~"toukmond"){
+							sub("[0-9]+","~0",$2)
+							}
+						else{
+							sub("[0-9]+","@0",$2)
+							}
+#						print($0)
+						newline = $0
+						}
 					}
 				gsub("~"," 3 root !!!!staff~",newline)
 				gsub("@"," 1 toukmond restricted~",newline)
